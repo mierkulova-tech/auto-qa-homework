@@ -25,7 +25,7 @@ Part of my learning path at [ITCareerHub.de](https://itcareerhub.de)
 python -m venv venv
 source venv/Scripts/activate  # Windows
 # source venv/bin/activate    # macOS / Linux
-pip install pytest
+pip install -r requirements.txt
 ```
 
 Each homework folder has its own README with the run command.
