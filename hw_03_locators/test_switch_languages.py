@@ -4,15 +4,18 @@ on the IT Career Hub website.
 """
 
 import time
+from typing import Any, Generator
+
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
 @pytest.fixture
-def driver() -> webdriver.Chrome:
+def driver() -> Generator[WebDriver, Any, None]:
     """
     Fixture to initialize, configure, and tear down the Chrome WebDriver instance.
 
@@ -69,7 +72,7 @@ def test_switch_languages_button(driver: webdriver.Chrome) -> None:
     ru_button = wait.until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, 'a[href*="/ru"]'))
     )
-    ru_button.click()
+    driver.execute_script("arguments[0].click();", ru_button)
 
     # Wait until the URL changes back to the Russian version
     wait.until(EC.url_contains("/ru"))
