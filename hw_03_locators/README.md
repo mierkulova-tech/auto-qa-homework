@@ -1,9 +1,5 @@
 # HW 03 — Advanced Locators and Navigation
-
-<p align="center">
-  <img src="assets/hw_03_preview.png" alt="Project Structure Preview" width="800">
-</p>
-
+![Homework Preview](../assets/hw_03_preview.png)
 
 Comprehensive automated testing of the IT Career Hub website, focusing on complex navigation, language switching, and interactive UI elements.
 
