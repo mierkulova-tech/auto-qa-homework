@@ -1,5 +1,7 @@
 # HW 04 — Selenium Advanced: Dynamic Elements & Waits
 
+![Homework Preview](../assets/hw_04_preview.png)
+
 Testing dynamic UI behavior and asynchronous content loading using explicit waits.
 
 ## Project structure
