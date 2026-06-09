@@ -1,5 +1,6 @@
 # HW 05 — Advanced Selenium II: iFrames & Drag and Drop
 
+![Homework Preview](../assets/hw_05_preview.png)
 Testing advanced browser interactions: switching into iframe contexts and performing drag-and-drop operations.
 
 ## Project structure
