@@ -62,21 +62,17 @@ def test_drag_and_drop_image_to_trash(driver: webdriver.Chrome) -> None:
     # STEP 2: Switch into the iframe wrapping the drag-and-drop demo
     iframe = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "iframe.demo-frame")))
     driver.switch_to.frame(iframe)
-    print("Switched into drag-and-drop iframe context.")
 
     # STEP 3: Wait for all gallery items to be visible
     gallery_items = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "#gallery li")))
     first_photo = gallery_items[0]
-    print(f"Gallery loaded. Total photos before drag: {len(gallery_items)}")
 
     # STEP 4: Locate the Trash drop target
     trash = wait.until(EC.visibility_of_element_located((By.ID, "trash")))
-    print("Trash area located.")
 
     # STEP 5: Perform drag-and-drop using ActionChains
     actions = ActionChains(driver)
     actions.drag_and_drop(first_photo, trash).perform()
-    print("Drag-and-drop action executed.")
 
     # STEP 6: Wait for the photo to appear in Trash, then assert count
     wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#trash li")))
@@ -84,11 +80,9 @@ def test_drag_and_drop_image_to_trash(driver: webdriver.Chrome) -> None:
     assert len(trash_items) == 1, (
         f"Expected 1 photo in Trash, but found {len(trash_items)}."
     )
-    print(f"Trash count verified: {len(trash_items)} photo(s) in trash.")
 
     # STEP 7: Assert that exactly 3 photos remain in the gallery
     gallery_items = driver.find_elements(By.CSS_SELECTOR, "#gallery li")
     assert len(gallery_items) == 3, (
         f"Expected 3 photos remaining in gallery, but found {len(gallery_items)}."
     )
-    print(f"Gallery count verified: {len(gallery_items)} photo(s) remaining.")
