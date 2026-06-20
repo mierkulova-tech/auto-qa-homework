@@ -44,11 +44,9 @@ def test_iframe_text_is_displayed(driver: webdriver.Chrome) -> None:
     # STEP 2: Locate the iframe by ID and switch WebDriver context into it
     iframe = wait.until(EC.presence_of_element_located((By.ID, "my-iframe")))
     driver.switch_to.frame(iframe)
-    print("Switched into iframe context.")
 
     # STEP 3: Locate all lead paragraphs inside the iframe
     paragraphs = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "lead")))
-    print(f"Found {len(paragraphs)} paragraph(s) inside iframe.")
 
     # STEP 4: Search for the expected text across all paragraphs
     expected_text = "semper posuere integer et senectus justo curabitur."
@@ -59,4 +57,3 @@ def test_iframe_text_is_displayed(driver: webdriver.Chrome) -> None:
         f"Expected text not found inside iframe.\n"
         f"Expected: '{expected_text}'"
     )
-    print(f"Validation successful. Text found: '{expected_text}'")
