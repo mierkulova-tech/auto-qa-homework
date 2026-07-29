@@ -8,8 +8,8 @@ Testing dynamic UI behavior and asynchronous content loading using explicit wait
 
 ```
 hw_04_selenium_advanced/
-├── test_button_text.py      ← verifies button label updates after input
-├── test_image_loading.py    ← validates delayed images and their attributes
+├── test_change_text.py.py      ← verifies button label updates after input
+├── test_images_download.py    ← validates delayed images and their attributes
 └── README.md
 ```
 
@@ -17,7 +17,7 @@ hw_04_selenium_advanced/
 
 ```bash
 # Run all tests in the directory
-pytest pytest hw_04_selenium_advanced/ -v -s
+pytest hw_04_selenium_advanced/ -v -s
 
 ```
 
