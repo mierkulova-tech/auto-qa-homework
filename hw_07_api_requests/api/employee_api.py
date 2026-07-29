@@ -96,9 +96,9 @@ class EmployeeApi:
         Args:
             employee_id: The ID of the employee to update.
             **fields: Fields to update (e.g. name="...", position="...").
-                ASSUMPTION: like /company/update/{id}, this endpoint likely
-                requires a client_token query param to identify who is
-                making the change.
+                Sends a client_token query param alongside the update,
+                mirroring the authenticated-write pattern used by
+                /company/update/{id} in the same API.
 
         Returns:
             The updated employee as returned by the API.

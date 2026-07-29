@@ -7,7 +7,7 @@ using an `EmployeeApi` helper class (Page-Object-style, same idea as the
 ## Project structure
 
 ```
-hw_07_api_testing/
+hw_07_api_requests/
 ├── api/
 │   ├── __init__.py
 │   ├──employee_api.py     ← EmployeeApi helper class

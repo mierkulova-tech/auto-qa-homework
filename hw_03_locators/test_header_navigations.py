@@ -40,8 +40,7 @@ def test_check_header_elements(driver: webdriver.Chrome) -> None:
         3. Verify header links: Programs, About Us, Bildungsgutschein, Reviews, and Blog.
         4. Verify language toggle buttons (RU and DE).
     """
-    WebDriverWait(driver, 10)
-
+    wait = WebDriverWait(driver, 10)
     # STEP 1: Handle cookie consent banner
     cookie_btn = driver.find_element(By.CSS_SELECTOR, ".t972__accept-btn")
     cookie_btn.click()
