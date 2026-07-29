@@ -17,7 +17,7 @@ Part of my learning path at [ITCareerHub.de](https://itcareerhub.de)
 | HW 04 | Advanced Selenium | [hw_04_selenium_advanced](./hw_04_selenium_advanced) | Done |
 | HW 05 | Advanced Selenium II | [hw_05_selenium_advanced_2](./hw_05_selenium_advanced_2) | Done |
 | HW 06 | Page Object Model | [hw_06_page_object_model](./hw_06_page_object_model) | Done |
-| HW 07 | API Testing with Requests | [hw_07_api_requests](./hw_07_api_requests) | ⏳ |
+| HW 07 | API Testing with Requests | [hw_07_api_requests](./hw_07_api_requests) | Done |
 
 ## Setup (once)
 
