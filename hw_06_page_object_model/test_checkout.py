@@ -1,59 +1,10 @@
 """
 HW 06 — Page Object Model: SauceDemo end-to-end checkout test.
 """
-
-from typing import Any, Generator
-
-import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.webdriver import WebDriver
+from imports import LoginPage, InventoryPage, CartPage, CheckoutInfoPage, CheckoutOverviewPage
+from constants import USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, POSTAL_CODE, PRODUCTS, EXPECTED_TOTAL
 
-from pages.login_page import LoginPage
-from pages.inventory_page import InventoryPage
-from pages.cart_page import CartPage
-from pages.checkout_info_page import CheckoutInfoPage
-from pages.checkout_overview_page import CheckoutOverviewPage
-
-
-# --- Constants ---
-BASE_URL      = "https://www.saucedemo.com/"
-USERNAME      = "standard_user"
-PASSWORD      = "secret_sauce"
-FIRST_NAME    = "Olena"
-LAST_NAME     = "Mierkulova"
-POSTAL_CODE   = "20095"
-PRODUCTS      = [
-    "Sauce Labs Backpack",
-    "Sauce Labs Bolt T-Shirt",
-    "Sauce Labs Onesie",
-]
-EXPECTED_TOTAL = "Total: $58.29"
-
-
-# --- Fixture ---
-@pytest.fixture
-def driver() -> Generator[WebDriver, Any, None]:
-    """
-    Fixture to initialize, configure, and tear down the Chrome WebDriver instance.
-    ChromeOptions suppress the 'Save password?' popup to prevent UI interference.
-
-    Yields:
-        webdriver.Chrome: The configured Chrome WebDriver instance.
-    """
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("prefs", {
-        "credentials_enable_service": False,
-        "profile.password_manager_enabled": False,
-        "profile.password_manager_leak_detection": False
-    })
-    driver = webdriver.Chrome(options=options)
-    driver.maximize_window()
-    driver.get(BASE_URL)
-    yield driver
-    driver.quit()
-
-
-# --- Test ---
 def test_checkout_total(driver: webdriver.Chrome) -> None:
     """
     Test Case: Complete an end-to-end checkout flow and verify the order total.
@@ -102,4 +53,3 @@ def test_checkout_total(driver: webdriver.Chrome) -> None:
         f"Expected: '{EXPECTED_TOTAL}'\n"
         f"Actual:   '{actual_total}'"
     )
-    print(f"Test passed. Order total verified: '{actual_total}'")

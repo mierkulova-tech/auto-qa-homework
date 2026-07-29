@@ -3,7 +3,6 @@ Login Page — Page Object for https://www.saucedemo.com/
 """
 
 from selenium.webdriver.common.by import By
-
 from pages.base_page import BasePage
 
 

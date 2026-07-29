@@ -17,7 +17,6 @@ class CheckoutOverviewPage(BasePage):
     def wait_for_overview_page(self) -> None:
         """Wait until the URL confirms we are on the order overview page."""
         self._wait.until(EC.url_contains("checkout-step-two"))
-        print("Overview page loaded: URL contains 'checkout-step-two'.")
 
     # --- Queries ---
     def get_total(self) -> str:
@@ -28,5 +27,4 @@ class CheckoutOverviewPage(BasePage):
             str: e.g. 'Total: $58.29'
         """
         total_text = self._get_text(self._TOTAL_LABEL)
-        print(f"Order total displayed: '{total_text}'")
         return total_text

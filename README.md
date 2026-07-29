@@ -22,9 +22,17 @@ Part of my learning path at [ITCareerHub.de](https://itcareerhub.de)
 ## Setup (once)
 
 ```bash
+# Create virtual environment
 python -m venv venv
-source venv/Scripts/activate  # Windows
-# source venv/bin/activate    # macOS / Linux
+# Activate virtual environment
+# Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+
+# Windows (CMD):
+# venv\Scripts\activate.bat
+
+# macOS / Linux / Git Bash:
+# source venv/bin/activate
 pip install -r requirements.txt
 ```
 

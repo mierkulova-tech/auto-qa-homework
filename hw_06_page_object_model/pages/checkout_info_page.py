@@ -3,7 +3,6 @@ Checkout Info Page — Page Object for the SauceDemo checkout step one (form).
 """
 
 from selenium.webdriver.common.by import By
-
 from pages.base_page import BasePage
 
 
@@ -22,7 +21,6 @@ class CheckoutInfoPage(BasePage):
         self._type(self._FIRST_NAME_INPUT, first_name)
         self._type(self._LAST_NAME_INPUT, last_name)
         self._type(self._POSTAL_CODE_INPUT, postal_code)
-        print(f"Form filled: {first_name} {last_name}, ZIP: {postal_code}")
 
     def continue_to_overview(self) -> None:
         """Click Continue to proceed to the order overview page."""

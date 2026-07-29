@@ -3,7 +3,6 @@ Inventory Page — Page Object for the SauceDemo product listing page.
 """
 
 from selenium.webdriver.common.by import By
-
 from pages.base_page import BasePage
 
 
@@ -26,7 +25,6 @@ class InventoryPage(BasePage):
     def add_product(self, product_name: str) -> None:
         """Click the 'Add to cart' button for the given product name."""
         self._click(self._add_to_cart_button(product_name))
-        print(f"Added to cart: '{product_name}'")
 
     def go_to_cart(self) -> None:
         """Click the shopping cart icon to navigate to the cart page."""

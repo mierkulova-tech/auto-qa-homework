@@ -16,6 +16,9 @@ hw_06_page_object_model/
 │   ├── cart_page.py             ← cart review and checkout navigation
 │   ├── checkout_info_page.py    ← personal information form
 │   └── checkout_overview_page.py ← order summary and total price
+├── constants.py          
+├── conftest.py          
+├── imports.py 
 ├── test_checkout.py             ← end-to-end test
 └── README.md
 ```
