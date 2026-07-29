@@ -1,10 +1,10 @@
-
+"""Local mock Employee API for testing without the training server."""
 
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-
+# Simple in-memory storage
 employees: dict[int, dict] = {}
 next_id = 1
 
