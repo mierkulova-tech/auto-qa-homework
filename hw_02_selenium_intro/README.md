@@ -14,7 +14,7 @@ hw_02_selenium_intro/
 ## Run tests
 
 ```bash
-pytest pytest test_payment_section.py -v -s
+pytest test_payment_section.py -v -s
 ```
 
 ## What is tested
