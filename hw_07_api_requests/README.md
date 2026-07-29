@@ -1,5 +1,7 @@
 # HW 07 — API Testing with Requests
 
+![Homework Preview](../assets/hw_07_preview.png)
+
 API tests for the Employee module of the course's X-Clients training server,
 using an `EmployeeApi` helper class (Page-Object-style, same idea as the
 `pages/` classes in hw_06).
